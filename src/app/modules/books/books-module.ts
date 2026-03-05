@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { BooksRoutingModule } from './books-routing-module';
-import { ListBooks } from './pages/list-books/list-books';
-import { TableBooks } from './components/table-books/table-books';
-import { Books } from '../books';
+import { SharedModule } from '../shared/shared-module'; 
+import { BooksComponent } from './books.component';
+import { BooksRoutingModule } from './books-routing.module';
+import { TableBooksComponent } from './components/table-books/table-books.component';
+import { ListBooksComponent } from './pages/list-books/list-books.component';
 
 
 @NgModule({
   declarations: [
-    ListBooks,
-    TableBooks,
-    Books
+    BooksComponent,
+    ListBooksComponent,
+    TableBooksComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     BooksRoutingModule
   ]
 })
