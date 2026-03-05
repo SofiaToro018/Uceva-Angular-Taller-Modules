@@ -2,6 +2,7 @@ import { CurrencyPipe } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BOOKS } from '../../../../core/config/books.config';
+import { BadgeComponent } from '../../../shared/components/badge/badge.component';
 import { TableBooksComponent } from './table-books.component';
 
 describe('TableBooksComponent', () => {
@@ -10,7 +11,7 @@ describe('TableBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TableBooksComponent]
+      declarations: [TableBooksComponent, BadgeComponent]
     })
     .compileComponents();
 
