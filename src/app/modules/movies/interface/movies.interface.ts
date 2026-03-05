@@ -16,8 +16,8 @@
  * };
  * ```
  */
-export interface Movies {
-    /**
+export interface Movie {
+  /**
    * Identificador único de la película.
    */
   id: number;
@@ -40,8 +40,9 @@ export interface Movies {
   /**
    * Género de la película.
    */
-  genre: string;
+  genre: MovieGenre;
 }
+
 /**
  * Tipos de géneros de películas disponibles.
  */

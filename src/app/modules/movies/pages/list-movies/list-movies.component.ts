@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Movies } from '../../interface/movies.interface';
+import { Movie } from '../../interface/movies.interface';
 import { MoviesService } from '../../services/movies.service';
 /**
  * Componente contenedor de películas.
@@ -31,7 +31,7 @@ export class ListMoviesComponent {
   /**
    * Lista de películas obtenida del servicio.
    */
-  movies: Movies[] = [];
+  movies: Movie[] = [];
 
   /**
    * Constructor del componente.

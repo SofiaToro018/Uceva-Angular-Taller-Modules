@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { MOVIES } from '../../../core/config/movies.confg';
-import { Movies } from '../interface/movies.interface';
+import { MOVIES } from '../../../core/config/movies.config';
+import { Movie } from '../interface/movies.interface';
 
 /**
  * Servicio para gestionar películas.
@@ -41,7 +41,7 @@ export class MoviesService {
    * });
    * ```
    */
-  getAllMovies(): Observable<Movies[]> {
+  getAllMovies(): Observable<Movie[]> {
     return of(MOVIES);
   }
 }

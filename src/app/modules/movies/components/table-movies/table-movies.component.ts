@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BadgeType } from '../../../shared/interfaces/badge.interface';
-import { MovieGenre, Movies} from '../../interface/movies.interface';
+import { Movie, MovieGenre } from '../../interface/movies.interface';
 
 /**
  * Componente de tabla de películas.
@@ -34,7 +34,7 @@ export class TableMoviesComponent {
    * Este Input recibe los datos desde el componente padre
    * y los renderiza en formato de tabla HTML.
    */
-  @Input() movies: Movies[] = [];
+  @Input() movies: Movie[] = [];
 
   /**
    * Mapeo de géneros de películas a tipos de badge.

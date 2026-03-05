@@ -1,4 +1,4 @@
-import { Movies } from "../../modules/movies/interface/movies.interface";
+import { Movie } from "../../modules/movies/interface/movies.interface";
 
 /**
  * Listado de películas disponibles en el sistema.
@@ -9,9 +9,9 @@ import { Movies } from "../../modules/movies/interface/movies.interface";
  * - Desarrollo sin backend
  * - Ejercicios académicos
  *
- * @type {Movies[]}
+ * @type {Movie[]}
  */
-export const MOVIES: Movies[] = [
+export const MOVIES: Movie[] = [
   {
     id: 1,
     title: 'El Padrino',
