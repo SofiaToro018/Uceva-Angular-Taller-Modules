@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Book  } from '../../interfaces/books.interface';
 import { BooksService } from '../../services/books.service';
 
@@ -23,26 +23,28 @@ import { BooksService } from '../../services/books.service';
   template: `<app-table-books [books]="books"></app-table-books>`,
   standalone: false,
 })
-export class ListBooksComponent {
-  /**
-   * Servicio de libros inyectado.
-   */
-  private booksService = inject(BooksService);
-
+export class ListBooksComponent implements OnInit {
   /**
    * Lista de libros obtenida del servicio.
    */
   books: Book[] = [];
 
   /**
-   * Constructor del componente.
+   * Servicio de libros inyectado.
+   */
+  private booksService = inject(BooksService);
+
+  /**
+   * Inicializa el componente y carga los libros.
    *
    * @remarks
-   * Obtiene los libros del servicio al inicializar el componente.
+   * Se suscribe al método `getAllBooks()` del servicio y
+   * asigna los datos recibidos a la propiedad `books`.
    */
-  constructor() {
-    this.booksService.getAllBooks().subscribe((books) => {
-      this.books = books;
+  ngOnInit(): void {
+    this.booksService.getAllBooks().subscribe({
+      next: (books) => this.books = books,
+      error: (error) => console.error(error),
     });
   }
 }

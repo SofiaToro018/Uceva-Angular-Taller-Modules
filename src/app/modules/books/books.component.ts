@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 /**
-* Componente contenedor de la sección de libros.
+ * Componente contenedor de la sección de libros.
  *
  * Este componente funciona como contenedor de todas las rutas relacionadas
  * con los libros, mostrando sus componentes hijos dentro del `<router-outlet>`.
