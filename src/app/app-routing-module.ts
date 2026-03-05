@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/books/books-module').then(m => m.BooksModule)
   },
   {
+    path: 'movies',
+    loadChildren: () => import('./modules/movies/movies-module').then(m => m.MoviesModule)
+  },
+  {
     path: '**',
     redirectTo: 'users'
   },
