@@ -21,12 +21,11 @@ import { Book } from '../../interfaces/books.interface';
  */
 @Component({
   selector: 'app-table-books',
-  standalone: false,
   templateUrl: './table-books.component.html',
-
+  standalone: false,
 })
-export class TableBooks {
-/**
+export class TableBooksComponent {
+  /**
    * Lista de libros a mostrar en la tabla.
    *
    * @remarks

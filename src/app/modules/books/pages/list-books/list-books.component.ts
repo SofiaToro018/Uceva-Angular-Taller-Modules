@@ -20,11 +20,11 @@ import { BooksService } from '../../services/books.service';
  */
 @Component({
   selector: 'app-list-books',
+  template: `<app-table-books [books]="books"></app-table-books>`,
   standalone: false,
-  templateUrl: './list-books.html',
 })
-export class ListBooks {
-/**
+export class ListBooksComponent {
+  /**
    * Servicio de libros inyectado.
    */
   private booksService = inject(BooksService);

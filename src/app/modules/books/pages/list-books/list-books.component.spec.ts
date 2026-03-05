@@ -1,23 +1,49 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
+import { BOOKS } from '../../../../core/config/books.config';
+import { TableBooksComponent } from '../../components/table-books/table-books.component';
+import { BooksService } from '../../services/books.service';
+import { ListBooksComponent } from './list-books.component';
 
-import { ListBooks } from './list-books.component';
-
-describe('ListBooks', () => {
-  let component: ListBooks;
-  let fixture: ComponentFixture<ListBooks>;
+describe('ListBooksComponent', () => {
+  let component: ListBooksComponent;
+  let fixture: ComponentFixture<ListBooksComponent>;
+  let booksService: BooksService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListBooks]
+      declarations: [ListBooksComponent, TableBooksComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListBooks);
+    fixture = TestBed.createComponent(ListBooksComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    booksService = TestBed.inject(BooksService);
   });
 
-  it('should create', () => {
+  it('debería crear el componente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('debería llamar a getAllBooks al iniciar', () => {
+    const spyGetAllBooks = jest.spyOn(booksService, 'getAllBooks').mockReturnValue(of(BOOKS));
+    fixture.detectChanges();
+    expect(spyGetAllBooks).toHaveBeenCalled();
+  });
+
+  it('debería asignar los libros recibidos del servicio', () => {
+    jest.spyOn(booksService, 'getAllBooks').mockReturnValue(of(BOOKS));
+    fixture.detectChanges();
+    expect(component.books).toEqual(BOOKS);
+  });
+
+  it('debería pasar los libros al componente table-books', () => {
+    jest.spyOn(booksService, 'getAllBooks').mockReturnValue(of(BOOKS));
+    fixture.detectChanges();
+    const tableComponent = fixture.debugElement
+      .query(By.directive(TableBooksComponent))
+      .componentInstance;
+    expect(tableComponent.books).toEqual(BOOKS);
   });
 });
