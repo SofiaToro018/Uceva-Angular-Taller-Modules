@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { BOOKS } from '../../../../core/config/books.config';
 import { TableBooksComponent } from '../../components/table-books/table-books.component';
 import { BooksService } from '../../services/books.service';
@@ -46,5 +46,13 @@ describe('ListBooksComponent', () => {
       .query(By.directive(TableBooksComponent))
       .componentInstance;
     expect(tableComponent.books).toEqual(BOOKS);
+  });
+
+  it('debería manejar el error cuando falla getAllBooks', () => {
+    const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+    jest.spyOn(booksService, 'getAllBooks').mockReturnValue(throwError(() => new Error('Error')));
+    fixture.detectChanges();
+    expect(consoleSpy).toHaveBeenCalled();
+    consoleSpy.mockRestore();
   });
 });

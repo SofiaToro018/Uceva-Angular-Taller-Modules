@@ -49,4 +49,8 @@ describe('TableBooksComponent', () => {
       expect(columns[4].nativeElement.textContent.trim()).toBe(bookPrice);
     });
   });
+
+  it('debería retornar secondary para autores no mapeados', () => {
+    expect(component.getAuthorBadgeType('Autor Desconocido')).toBe('secondary');
+  });
 });
