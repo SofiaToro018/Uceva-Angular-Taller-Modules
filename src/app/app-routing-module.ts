@@ -19,6 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./modules/movies/movies-module').then(m => m.MoviesModule)
   },
   {
+    path: 'random-users',
+    loadChildren: () => import('./modules/random-users/random-users-module').then(m => m.RandomUsersModule)
+  },
+  {
+    path: 'freetogame',
+    loadChildren: () => import('./modules/freetogame/freetogame-module').then(m => m.FreetogameModule)  
+  },
+  {
     path: '**',
     redirectTo: 'users'
   },

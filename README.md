@@ -126,3 +126,29 @@ src/app/modules/users/components/table-users/
 - Todos los componentes deben pertenecer a un NgModule
 - Mantener una estructura clara favorece la escalabilidad y mantenibilidad
 - Usar Angular CLI evita errores de configuración manual
+
+## 🌐 APIs Consultadas
+
+A continuación se documentan las APIs externas consumidas en los módulos del proyecto.
+
+### 🎮 Módulo FreeToGame
+
+| Campo | Detalle |
+|-------|---------|
+| **API** | [FreeToGame API](https://www.freetogame.com/api-doc) |
+| **Endpoint** | `https://www.freetogame.com/api/games` |
+| **Proxy CORS** | `https://api.allorigins.win/raw?url=https://www.freetogame.com/api/games` |
+| **Método HTTP** | GET |
+| **Descripción** | Retorna un listado de juegos gratuitos disponibles en diversas plataformas (PC, navegador, etc.). |
+| **Servicio Angular** | `FreeToGameService.getGames()` |
+
+### 👤 Módulo Random Users
+
+| Campo | Detalle |
+|-------|---------|
+| **API** | [Random User Generator](https://randomuser.me/) |
+| **Endpoint** | `https://randomuser.me/api/?results=10` |
+| **Método HTTP** | GET |
+| **Descripción** | Genera usuarios aleatorios con datos como nombre, correo, foto y ubicación. Se solicitan 10 resultados por petición. |
+| **Servicio Angular** | `RandomUsersService.getUsers()` |
+
