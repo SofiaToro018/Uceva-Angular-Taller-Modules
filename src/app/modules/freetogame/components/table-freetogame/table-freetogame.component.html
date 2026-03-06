@@ -1,0 +1,33 @@
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Título</th>
+      <th>Género</th>
+      <th>Plataforma</th>
+      <th>Publisher</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let game of games">
+
+      <td>
+        <img [src]="game.thumbnail" width="80">
+      </td>
+
+      <td>{{game.title}}</td>
+
+      <td>{{game.genre}}</td>
+
+      <td>{{game.platform}}</td>
+
+      <td>{{game.publisher}}</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
