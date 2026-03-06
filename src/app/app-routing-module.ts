@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/movies/movies-module').then(m => m.MoviesModule)
   },
   {
+    path: 'random-users',
+    loadChildren: () => import('./modules/random-users/random-users-module').then(m => m.RandomUsersModule)
+  },
+  {
     path: '**',
     redirectTo: 'users'
   },
