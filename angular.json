@@ -71,7 +71,8 @@
               "buildTarget": "Uceva-Angular-Talle-Modules:build:production"
             },
             "development": {
-              "buildTarget": "Uceva-Angular-Talle-Modules:build:development"
+              "buildTarget": "Uceva-Angular-Talle-Modules:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

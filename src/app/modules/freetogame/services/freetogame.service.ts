@@ -18,7 +18,7 @@ export class FreeToGameService {
   /**
    * URL base de la API que devuelve la lista de juegos gratuitos.
    */
-  private apiUrl = 'https://api.allorigins.win/raw?url=https://www.freetogame.com/api/games';
+  private apiUrl = '/api/freetogame/games';
 
   /**
    * Constructor que inyecta HttpClient
