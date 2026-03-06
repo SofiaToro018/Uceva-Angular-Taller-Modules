@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Movie } from '../../interface/movies.interface';
 import { MoviesService } from '../../services/movies.service';
 /**
@@ -22,7 +22,7 @@ import { MoviesService } from '../../services/movies.service';
   template: `<app-table-movies [movies]="movies"></app-table-movies>`,
   standalone: false,
 })
-export class ListMoviesComponent {
+export class ListMoviesComponent implements OnInit {
   /**
    * Servicio de películas inyectado.
    */
@@ -34,12 +34,12 @@ export class ListMoviesComponent {
   movies: Movie[] = [];
 
   /**
-   * Constructor del componente.
+   * Inicializa el componente.
    *
    * @remarks
    * Obtiene las películas del servicio al inicializar el componente.
    */
-  constructor() {
+  ngOnInit(): void {
     this.moviesService.getAllMovies().subscribe((movies) => {
       this.movies = movies;
     });

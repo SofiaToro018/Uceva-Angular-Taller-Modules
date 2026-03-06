@@ -12,7 +12,6 @@ describe('TableMoviesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TableMoviesComponent, BadgeComponent, CurrencyPipe],
-      
     })
     .compileComponents();
 

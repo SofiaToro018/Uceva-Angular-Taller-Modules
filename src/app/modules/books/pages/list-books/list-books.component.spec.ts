@@ -5,6 +5,7 @@ import { BOOKS } from '../../../../core/config/books.config';
 import { TableBooksComponent } from '../../components/table-books/table-books.component';
 import { BooksService } from '../../services/books.service';
 import { ListBooksComponent } from './list-books.component';
+import { BadgeComponent } from '../../../shared/components/badge/badge.component';
 
 describe('ListBooksComponent', () => {
   let component: ListBooksComponent;
@@ -13,7 +14,7 @@ describe('ListBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListBooksComponent, TableBooksComponent]
+      declarations: [ListBooksComponent, TableBooksComponent, BadgeComponent]
     })
     .compileComponents();
 
